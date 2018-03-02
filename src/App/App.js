@@ -1,7 +1,11 @@
 import 'materialize-css/dist/css/materialize.min.css';
 import './App.css';
 
+// if the app isn't created by create-react-app
+// you need to run npm install --save react to install 'react'
 import React from 'react';
+// you can use your own design of the app logo
+// add logo.png into 'src/App/' folder
 import logo from './logo.png';
 
 class App extends React.Component {
