@@ -1,4 +1,5 @@
 import './NewsPanel.css';
+import NewsCard from '../NewsCard/NewsCard';
 import React from 'react';
 
 // NewsPanel should maintain a state that is a dynamic list of NewsCard
@@ -14,7 +15,7 @@ class NewsPanel extends React.Component {
         this.loadMoreNews();
     }
 
-    // get news data from server/api while scrolling down the page
+    // get news data from server/api
     loadMoreNews() {
         const mock_news = [
             {
@@ -80,6 +81,7 @@ class NewsPanel extends React.Component {
                // the virtual DOM can quickly identify the components in the list. It only re-render the modified component instead of the entire list.
                // if the "key" attribute is not provided, it will re-render the entire list when any component is changed
                <a className="list-group-item" key={news_item.digest} href="#">
+                   {/* pass the news data as property to NewsCard */}
                    <NewsCard news={news_item}/>
                </a>
            );

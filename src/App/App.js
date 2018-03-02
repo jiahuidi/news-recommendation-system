@@ -7,6 +7,7 @@ import React from 'react';
 // you can use your own design of the app logo
 // add logo.png into 'src/App/' folder
 import logo from './logo.png';
+import NewsPanel from "../NewsPanel/NewsPanel";
 
 class App extends React.Component {
     render() {
@@ -14,7 +15,7 @@ class App extends React.Component {
           <div>
               <img className="logo" src={logo} alt="logo"/>
               <div className="container">
-                  {/*TODO: leave blank for now*/}
+                  <NewsPanel />
               </div>
           </div>
         );
