@@ -1,0 +1,12 @@
+.App {
+    text-align: center;
+}
+
+.logo {
+    /* display the logo img in the center */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    padding-top: 20px;
+}
