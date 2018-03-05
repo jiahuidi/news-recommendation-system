@@ -17,7 +17,7 @@ class NewsCard extends React.Component {
         // show the image of the news on the left
         // show the title, description, and tags on the right
         return(
-            <div className="news-container" onClick={() => this.redirectToUrl(this.props.news.url)}>
+            <div className="news-container" onClick={(e) => this.redirectToUrl(this.props.news.url, e)}>
                 <div className="row">
                     <div className="col s4 fill">
                         <img src={this.props.news.urlToImage} alt={this.props.news.title}/>

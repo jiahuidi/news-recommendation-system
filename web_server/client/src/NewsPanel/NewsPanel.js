@@ -1,6 +1,7 @@
 import './NewsPanel.css';
 import NewsCard from '../NewsCard/NewsCard';
 import React from 'react';
+import _ from 'lodash';
 
 // NewsPanel should maintain a state that is a dynamic list of NewsCard
 class NewsPanel extends React.Component {
@@ -13,10 +14,22 @@ class NewsPanel extends React.Component {
     // instantiate the network request to load data from a remote endpoint
     componentDidMount() {
         this.loadMoreNews();
+        // call loadMoreNews per second
+        this.loadMoreNews = _.debounce(this.loadMoreNews, 1000);
+        window.addEventListener('scroll', () => this.handleScroll());
+    }
+
+    handleScroll() {
+        let scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+        if ((window.innerHeight + scrollY) >= (document.body.offsetHeight - 50)) {
+            console.log('handleScroll');
+            this.loadMoreNews();
+        }
     }
 
     // get news data from server/api
     loadMoreNews() {
+        console.log('Loading more news...');
         const news_url = 'http://' + window.location.hostname + ':3000' + '/news';
         const request = new Request(news_url, { method : 'GET' });
 
