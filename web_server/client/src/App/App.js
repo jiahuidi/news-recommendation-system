@@ -1,4 +1,5 @@
 import 'materialize-css/dist/css/materialize.min.css';
+import 'materialize-css/dist/js/materialize';
 import './App.css';
 
 // if the app isn't created by create-react-app
