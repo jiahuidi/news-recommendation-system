@@ -14,6 +14,7 @@ class LoginPage extends React.Component {
         };
     }
 
+    // submit form
     processForm(event) {
         event.preventDefault();
 
@@ -26,6 +27,7 @@ class LoginPage extends React.Component {
         // TODO: post login data.
     }
 
+    // update while user input
     changeUser(event) {
         const field = event.target.name;
         const user = this.state.user;
@@ -39,10 +41,10 @@ class LoginPage extends React.Component {
     render() {
         return (
             <LoginForm
-                onSubmit={(e) => this.processForm(e)}
-                onChange={(e) => this.changeUser(e)}
-                errors={this.state.errors}
-                user={this.state.user} />
+                onSubmit = {(event) => this.processForm(event)}
+                onChange = {(event) => this.changeUser(event)}
+                errors = {this.state.errors}
+                user = {this.state.user} />
         );
     }
 }
